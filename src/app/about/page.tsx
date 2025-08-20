@@ -1,11 +1,12 @@
 // src/app/(marketing)/about/page.tsx
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+/* eslint-disable react/no-unescaped-entities */
 
 export const metadata = {
   title: "About — Adrian Velazquez",
   description:
-    "Brown University EE × Applied Math ’26. Hardware-minded engineer focused on reliable circuits, semiconductors, and applied ML.",
+    "Brown University EE × Applied Math 2026. Hardware-minded engineer focused on reliable circuits, semiconductors, and applied ML.",
 };
 
 function Badge({ children }: { children: React.ReactNode }) {
@@ -31,7 +32,7 @@ export default function About() {
       <header className="space-y-4">
         <h1 className="text-4xl font-bold tracking-tight">About</h1>
         <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-          I’m <strong>Adrian Velazquez-Martinez</strong>, a senior at Brown University studying
+          I am <strong>Adrian Velazquez-Martinez</strong>, a senior at Brown University studying
           <strong> Electrical Engineering</strong> and <strong>Applied Mathematics</strong> (’26).
           I like building reliable hardware and the tooling around it.
         </p>
@@ -44,7 +45,7 @@ export default function About() {
         </div>
       </header>
 
-      <Section title="What I’m focused on">
+      <Section title="What I am focused on">
         <ul className="list-disc pl-5 space-y-2">
           <li>Robust circuit design & simulation (LTspice, lab instrumentation).</li>
           <li>Timing & signal-integrity workflows (HyperLynx, TimingDesigner).</li>
@@ -55,7 +56,7 @@ export default function About() {
       <Section title="Recent experience">
         <div className="space-y-4">
           <div>
-            <h3 className="font-medium"> (Summer '25) Honeywell Aerospace - Electrical Engineering Intern</h3>
+            <h3 className="font-medium"> (Summer 2025) Honeywell Aerospace - Electrical Engineering Intern</h3>
             <p className="text-sm">
               Analog reset circuitry for an FMC and an MRAM timing investigation using
               Mentor/Siemens flows, HyperLynx, and TimingDesigner. Worked diligently
@@ -63,7 +64,7 @@ export default function About() {
             </p>
           </div>
           <div>
-            <h3 className="font-medium"> (Summer '24) HP - Digital Tranformations</h3>
+            <h3 className="font-medium"> (Summer 2024) HP - Digital Tranformations</h3>
             <p className="text-sm">
               Applied AI tooling and delivery workflows; reliable data processing and documentation.
             </p>
