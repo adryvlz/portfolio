@@ -73,7 +73,7 @@ export default function About() {
 
       <Section title="Education">
         <p>
-          <strong>Brown University</strong> — B.S. in Electrical Engineering and Applied Mathematics,
+          <strong>Brown University</strong> - B.S. in Electrical Engineering and Applied Mathematics,
           expected <strong>Spring 2026</strong>.
         </p>
       </Section>
