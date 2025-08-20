@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export const metadata = {
   title: "About — Adrian Velazquez",
   description:
-    "Brown University EE × Applied Math 2026. Hardware-minded engineer focused on reliable circuits, semiconductors, and applied ML.",
+    "Brown University EE & Applied Math 2026. Hardware-minded engineer focused on reliable circuits, semiconductors, and applied ML.",
 };
 
 function Badge({ children }: { children: React.ReactNode }) {
@@ -32,7 +32,7 @@ export default function About() {
         <h1 className="text-4xl font-bold tracking-tight">About</h1>
         <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
           I am <strong>Adrian Velazquez-Martinez</strong>, a senior at Brown University studying
-          <strong> Electrical Engineering</strong> and <strong>Applied Mathematics</strong> (’26).
+          <strong> Electrical Engineering</strong> and <strong>Applied Mathematics</strong> (Class of 26).
           I like building reliable hardware and the tooling around it.
         </p>
         <div className="flex flex-wrap gap-2">
