@@ -1,7 +1,6 @@
-// src/app/(marketing)/about/page.tsx
+/* eslint-disable react/no-unescaped-entities */
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-/* eslint-disable react/no-unescaped-entities */
 
 export const metadata = {
   title: "About — Adrian Velazquez",
