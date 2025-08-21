@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { projects } from "@/lib/projects";
+import ProjectCard from "@/components/ProjectCard";
 
 export const metadata = {
   title: "Projects — Adrian Velazquez",

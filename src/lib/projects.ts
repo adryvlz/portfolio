@@ -54,7 +54,7 @@ export const projects: Project[] = [
       "Verilog implementation with VGA timing and debounced controls for Pong.",
     tech: ["Verilog", "FPGA", "VGA"],
     period: "Fall 2024",
-    cover: "/FPGA_pong.gif",
+    cover: "/pong.png",
     links: { github: "https://github.com/youruser/fpga-pong" },
   },
   {

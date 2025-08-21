@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/lib/projects";
 
+const srcSafe = (s?: string) =>
+  !s ? null : s.startsWith("/") || s.startsWith("http") ? s : `/${s.replace(/^\.?\/+/, "")}`;
+
 export default function ProjectCard({
   slug, title, summary, tech, cover, coverAlt, period, video,
 }: Project & { coverAlt?: string; video?: { webm?: string; mp4?: string; poster?: string } }) {
