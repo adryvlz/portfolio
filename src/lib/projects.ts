@@ -11,15 +11,26 @@ export type Project = {
     demo?: string;
     paper?: string;
     slides?: string;
+    post?: string;
   };
 };
 
 export const projects: Project[] = [
   {
+    slug: "reset-circuit-study",
+    title: "Reset Circuit Timing Study (Honeywell)",
+    summary:
+      "Exploration of analog reset behavior and timing requirements for MRAM; performed extensive verification & validation on Flight Management Computers (FMC)",
+    tech: ["Analog", "Timing", "HyperLynx"],
+    period: "Summer 2025",
+    cover: "/Picture2.jpg",
+    links: { slides: "https://drive.google.com/file/d/1jHr6R2D4DVSgYKl5UuWd0burr7UApsPZ/view?usp=sharing"},
+  },
+  {
     slug: "pnn-circuit-simulator",
     title: "Poisson Neural Network Simulator",
     summary:
-      "Physics-informed model that predicts EM behavior in interconnects; includes a small web demo.",
+      "SympNet, PNN, & PINN model that predicts EM behavior for a particle (Grad level course).",
     tech: ["Python", "PyTorch"],
     period: "Spring 2025",
     cover: "/animation_1500.gif",
@@ -28,34 +39,50 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "diodes",
+    title: "Van Wickle Wafers",
+    summary: "Co-founded a Brown based diodes startup as a class project with great returns",
+    tech: ["Semiconductors"],
+    period: "Spring 2025",
+    cover: "/diodelayout.png",
+    links: { paper: "/1590report.pdf"},
+  },
+  {
+    slug: "fpga-pong",
+    title: "FPGA Pong!",
+    summary:
+      "Verilog implementation with VGA timing and debounced controls for Pong.",
+    tech: ["Verilog", "FPGA", "VGA"],
+    period: "Fall 2024",
+    cover: "/FPGA_pong.gif",
+    links: { github: "https://github.com/youruser/fpga-pong" },
+  },
+  {
     slug: "am-radio",
     title: "AM Radio (from-scratch build)",
     summary:
       "Preamplifier, AM modulator, power amp, and full signal analysis on bench instruments.",
     tech: ["Analog", "LTspice", "Lab"],
     period: "Spring 2024",
-    cover: "/projects/am-radio/cover.jpg",
+    cover: "/preamp.png",
   },
   {
-    slug: "fpga-pong",
-    title: "FPGA Mini-Project: Pong",
-    summary:
-      "Verilog implementation with VGA timing and debounced controls on a low-cost FPGA board.",
-    tech: ["Verilog", "FPGA", "VGA"],
-    period: "Fall 2024",
-    cover: "/projects/fpga-pong/cover.jpg",
-    links: { github: "https://github.com/youruser/fpga-pong" },
+    slug: "AI w/ HP",
+    title: "AI Research (Hewlett-Packard",
+    summary: "Conducted AI industry research within the Digital Transformations Team",
+    tech: ["AI"],
+    period: "Summer 2024",
+    cover: "/HP_pic.jpeg",
+    links: { post: "https://www.linkedin.com/posts/adrian-velazquez-martinez_leda4life-activity-7228777272562872321-h3dI?utm_source=share&utm_medium=member_desktop&rcm=ACoAADhyzlsBgRpUfymP4ck5YO0G3nYs9-6y82Q" }
   },
   {
-    slug: "reset-circuit-study",
-    title: "Reset Circuit Timing Study",
-    summary:
-      "Exploration of analog reset behavior and timing margins; simulated corner cases and SI considerations.",
-    tech: ["Analog", "Timing", "HyperLynx"],
-    period: "Summer 2025",
-    cover: "",
-    links: { slides: "https://drive.google.com/file/d/1jHr6R2D4DVSgYKl5UuWd0burr7UApsPZ/view?usp=sharing"},
-  },
+    slug: "BEEM",
+    title: "NASA & Zenit Labs Bubbles Research",
+    summary: "Co-developed the electrical system for sensors & motors, while aiding with audio analysis to determine speed of sound",
+    tech: ["Circuits"],
+    period: "Spring 2024",
+    cover: "/beem.png",
+  }
 ];
 
 // helpers

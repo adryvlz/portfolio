@@ -68,6 +68,16 @@ export default function ProjectsPage() {
                     Slides
                   </a>
                 )}
+                {p.links?.post && (
+                  <a
+                    href={p.links.post}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-md border px-3 py-1"
+                  >
+                    LinkedIn post
+                  </a>
+                )}
               </div>
             </div>
           </article>

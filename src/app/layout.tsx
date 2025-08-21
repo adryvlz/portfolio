@@ -7,7 +7,7 @@ import Image from 'next/image';
 const font = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Adrian Velazquez – Portfolio',
+  title: 'Adrian Velazquez - Portfolio',
   description: 'EE × Applied Math senior building reliable hardware for AI.',
 };
 
@@ -30,7 +30,7 @@ function Header() {
     { href: '/projects', label: 'Projects' },
     { href: '/resume', label: 'Resume' },
     { href: '/contact', label: 'Contact' },
-    { href: '/linkedin', label: 'LinkedIn'}
+    // { href: '/linkedin', label: 'LinkedIn'}
   ];
 
   return (
