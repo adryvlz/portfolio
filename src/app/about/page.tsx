@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export const metadata = {
-  title: "About — Adrian Velazquez",
+  title: "About - Adrian Velazquez",
   description:
     "Brown University EE & Applied Math 2026. Hardware-minded engineer focused on reliable circuits, semiconductors, and applied ML.",
 };

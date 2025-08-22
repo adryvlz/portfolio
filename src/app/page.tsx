@@ -49,10 +49,10 @@ export default function Home() {
       {/* Welcome / Hero */}
       <section className="mx-auto max-w-3xl px-4 py-20 text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-          Welcome, I’m Adrian — EE × Applied Math @ Brown University
+          Welcome, I’m Adrian - EE × Applied Math @ Brown University
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-400">
-          Previously worked with HP & Honeywell Aerospace for AI, circuit
+          Previously worked with HP & Honeywell Aerospace for topics in AI and circuit
           design and integration. Graduating Spring 2026.
         </p>
       </section>
@@ -62,19 +62,19 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
     <SectionCard
       title="About"
-      description="Quick background, focus areas, and what I’m exploring this year."
+      description="Quick background and focus areas."
       href="/about"
       cta="Read about me"
     />
     <SectionCard
       title="Resume"
-      description="One-page HTML view plus a downloadable PDF."
+      description="One-page HTML view plus a downloadable PDF. Click top right corner!"
       href="/resume"
       cta="Open resume"
     />
     <SectionCard
       title="Projects"
-      description="Selected work with write-ups, schematics, and code links."
+      description="Selected work with reports, GitHub links, and slides"
       href="/projects"
       cta="Explore projects"
     />

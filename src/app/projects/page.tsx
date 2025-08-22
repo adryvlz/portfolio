@@ -76,7 +76,17 @@ export default function ProjectsPage() {
                     rel="noreferrer"
                     className="rounded-md border px-3 py-1"
                   >
-                    LinkedIn post
+                    LinkedIn Post
+                  </a>
+                )}
+                {p.links?.video && (
+                  <a
+                    href={p.links.video}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-md border px-3 py-1"
+                  >
+                    Video Showcase
                   </a>
                 )}
               </div>
