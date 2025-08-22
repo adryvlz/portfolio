@@ -55,22 +55,24 @@ function Header() {
 
           {/* Brown logo (hidden on very small screens if you want) */}
           <Link
-            href="https://www.brown.edu/"
-            aria-label="Brown University"
-            className="hidden md:inline-flex items-center group"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span className="sr-only">Brown University</span>
-            {/* Light mode asset */}
-            <Image
-              src="/brown-dark.png"
-              alt=""
-              width={110}
-              height={28}
-              className="h-6 w-auto dark:hidden opacity-80 transition group-hover:opacity-100"
-              priority
-            />
+          href="https://www.brown.edu/"
+          aria-label="Brown University"
+          className="hidden md:inline-flex items-center group"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span className="sr-only">Brown University</span>
+
+          {/* Light mode */}
+          <Image
+            src="/brown-dark.png"
+            alt="Brown University"
+            width={220}            // intrinsic size (bigger than before)
+            height={56}
+            className="h-8 sm:h-10 md:h-12 w-auto dark:hidden
+                      opacity-90 transition group-hover:opacity-100"
+            priority
+          />
             </Link>
           </div>
 

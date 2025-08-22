@@ -12,6 +12,7 @@ export type Project = {
     paper?: string;
     slides?: string;
     post?: string;
+    video?: string;
   };
 };
 
@@ -55,7 +56,7 @@ export const projects: Project[] = [
     tech: ["Verilog", "FPGA", "VGA"],
     period: "Fall 2024",
     cover: "/pong.png",
-    links: { github: "https://github.com/youruser/fpga-pong" },
+    links: { video: "https://drive.google.com/file/d/1sUgzDXn_6I_TfRzhTtQ7qJVvK5OIWH7u/view?usp=sharing" },
   },
   {
     slug: "am-radio",
@@ -78,11 +79,14 @@ export const projects: Project[] = [
   {
     slug: "BEEM",
     title: "NASA & Zenit Labs Bubbles Research",
-    summary: "Co-developed the electrical system for sensors & motors, while aiding with audio analysis to determine speed of sound",
+    summary: "Co-developed the electrical system for sensors & motors, while aiding with audio analysis to determine speed of sound. Check the attached post for the parabolic flight!",
     tech: ["Circuits"],
     period: "Spring 2024",
     cover: "/beem.png",
-  }
+    links: { slides: "https://drive.google.com/file/d/1AL7dK5sN4cWJpAIhDTxyElMfVHOxPgST/view?usp=sharing",
+              post: "https://www.instagram.com/p/DNnfjTFRjBc/?igsh=MWxkdmd4amE2aGR2OQ%3D%3D"
+    }
+  },
 ];
 
 // helpers
