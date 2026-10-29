@@ -25,18 +25,19 @@ function App() {
 
         <BadgerCase onOpenCase={() => setActiveId("project-01")} />
 
-        <Experience />
-
-        <AboutMe />
-
         <section id="projects" className="section section--l">
           <div className="container">
             <div className="head grid12">
-              <h2>Ten projects, from radio to RTL</h2>
+              <h2>Ten projects, 2024 to now</h2>
+              <p className="label">Each opens its case: the build, the stack and the photographs.</p>
             </div>
             <ProjectGrid onCardClick={setActiveId} />
           </div>
         </section>
+
+        <Experience />
+
+        <AboutMe />
 
         <SkillsAndTools />
 

@@ -24,7 +24,7 @@ export function Experience() {
     <section id="experience" className="section section--s">
       <div className="container grid12">
         <h2 className="rows-head">Where I’ve worked</h2>
-        <ul className="rows">
+        <ul className="ruled rows">
           {ROLES.map((r) => (
             <li key={r.company} className="row">
               <h3>{r.company}</h3>

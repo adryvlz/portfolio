@@ -13,6 +13,8 @@ export interface Project {
   status?: "shipped" | "in-progress" | "prototype"
   // Short date shown in the work index.
   when: string
+  // Web-sized picture for listings; falls back to the first image.
+  cover?: string
   // Optional long-form fields surfaced only in the modal. Rows / sections
   // are hidden when their field is undefined so early-stage projects stay
   // uncluttered.
@@ -31,6 +33,7 @@ export const PROJECTS: Project[] = [
       "Consumer friendly electronic conference badge with full-stack bring up from BOM to firmware to app, pushing NFC well past tap to pay.",
     category: "Electronics + Firmware",
     when: "2025 to now",
+    cover: "/projects/project-01/badger-5-web.jpg",
     status: "prototype",
     skills: [
       "STM32U0",
@@ -74,6 +77,7 @@ export const PROJECTS: Project[] = [
       "Course project for Digital Systems Test: building software to drive and evaluate Design for Test (DFT) features against a DUT.",
     category: "Test + DFT",
     when: "In progress",
+    cover: "/projects/project-03/dft-1-web.jpg",
     status: "in-progress",
     skills: ["DFT", "Scan Chains", "ATPG", "Python", "Test Automation"],
     images: ["/projects/project-03/dft-1.png"],
@@ -85,6 +89,7 @@ export const PROJECTS: Project[] = [
       "Exploration of analog reset behavior and timing requirements for MRAM; performed extensive verification & validation on Flight Management Computers (FMC).",
     category: "Analog + V&V",
     when: "Summer 2025",
+    cover: "/projects/project-04/reset-circuit-1-web.jpg",
     skills: ["Analog", "Timing", "HyperLynx", "MRAM", "FMC"],
     images: ["/projects/project-04/reset-circuit-1.jpg"],
     timeline: "Summer 2025, Honeywell Aerospace",
@@ -146,6 +151,7 @@ export const PROJECTS: Project[] = [
       "Conducted AI industry research within HP's Digital Transformations team as part of the Leda cohort.",
     category: "AI + Research",
     when: "Summer 2024",
+    cover: "/projects/project-08/hp-1-web.jpg",
     skills: ["AI", "Industry Research", "Program Management"],
     images: ["/projects/project-08/hp-1.jpeg"],
     timeline: "Summer 2024, HP Inc.",

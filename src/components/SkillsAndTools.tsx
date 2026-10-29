@@ -11,7 +11,7 @@ export function SkillsAndTools() {
           {SKILL_GROUPS.map((group) => (
             <div key={group.category}>
               <h3>{group.category}</h3>
-              <ul>
+              <ul className="ruled">
                 {group.items.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
