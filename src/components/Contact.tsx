@@ -1,19 +1,21 @@
-import { SocialLinks } from "@/components/SocialLinks"
+import { EMAIL_ADDRESS, LINKEDIN_URL } from "@/lib/contact"
 
 export function Contact() {
   return (
-    <section
-      id="contact"
-      className="mx-auto flex max-w-6xl scroll-mt-20 flex-col gap-8 px-6 py-24"
-    >
-      <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-        Contact
-      </h2>
-      <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:gap-8">
-        <SocialLinks />
-        <p className="text-sm text-muted-foreground md:text-base">
-          reach out anytime! :D
-        </p>
+    <section id="contact" className="section contact">
+      <div className="container grid12">
+        <h2>Reach out anytime.</h2>
+        <div className="contact__body">
+          <a href={`mailto:${EMAIL_ADDRESS}`} className="contact__email">
+            {EMAIL_ADDRESS}
+          </a>
+          <div className="contact__meta">
+            <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="link">
+              LinkedIn
+            </a>
+            <span>Atlanta, GA</span>
+          </div>
+        </div>
       </div>
     </section>
   )

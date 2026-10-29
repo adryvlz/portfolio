@@ -3,52 +3,42 @@ export interface SkillGroup {
   items: readonly string[]
 }
 
+// Grouped from the résumé's Technical Skills section.
 export const SKILL_GROUPS: readonly SkillGroup[] = [
   {
-    category: "RF & Microwave",
+    category: "Digital design and verification",
     items: [
-      "SimSmith (Smith chart / impedance matching)",
-      "VNAs",
-      "RF signal testing & benchmarking",
-      "Oscilloscopes",
-      "Logic Analyzers",
-      "DMMs",
-      "Function/Signal Generators",
+      "Verilog, SystemVerilog, VHDL",
+      "Testbenches, regressions, coverage",
+      "Cadence Xcelium and SimVision",
+      "FPGA on Intel Quartus",
     ],
   },
   {
-    category: "Circuit Design & Simulation",
+    category: "SoC and physical design",
     items: [
-      "SPICE",
-      "PSpice",
-      "LTspice",
-      "Cadence Allegro",
-      "CMOS",
-      "VHDL",
-      "RTL",
-      "KiCAD",
-      "KLayout",
-      "Intel Quartus",
-      "Altium",
+      "Synopsys Design Compiler",
+      "Cadence Innovus, Tcl",
+      "Static timing analysis",
+      "Clock gating and PPA",
     ],
   },
   {
-    category: "Programming & Tools",
+    category: "Embedded",
     items: [
-      "Python (PyTorch)",
-      "MATLAB",
-      "C",
-      "C++",
-      "CUDA",
-      "Perl",
-      "Git",
-      "LaTeX",
-      "Linux",
-      "Jira",
+      "Bare-metal C and C++",
+      "STM32 Arm Cortex-M0+",
+      "SPI, I2C, UART",
+      "NFC over NCI 2.0",
     ],
   },
   {
-    category: "Process & Manufacturing",
-    items: ["DFM", "SMT Assembly"],
+    category: "Analog, RF and test",
+    items: [
+      "LTspice, PSpice, HyperLynx",
+      "PVT and Monte Carlo",
+      "VNAs and SimSmith",
+      "Python, MATLAB, Perl",
+    ],
   },
 ]

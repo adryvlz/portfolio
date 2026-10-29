@@ -1,42 +1,47 @@
-import { motion, useScroll, useTransform } from "motion/react"
-import { HeroGreeting } from "@/components/HeroGreeting"
-import { HeroTagline } from "@/components/HeroTagline"
-import { NameLockup } from "@/components/NameLockup"
-import { ProfilePhoto } from "@/components/ProfilePhoto"
+import { EMAIL_ADDRESS } from "@/lib/contact"
 
-interface HeroProps {
-  docked: boolean
-}
-
-export function Hero({ docked }: HeroProps) {
-  const { scrollY } = useScroll()
-
-  // Fade + gentle upward drift as the user scrolls into the first ~40vh.
-  // Reaches opacity 0 before useHeroExit unmounts the hero at 60vh, so
-  // the unmount happens while content is already invisible — no pop.
-  const opacity = useTransform(scrollY, (y) => {
-    const vh = typeof window !== "undefined" ? window.innerHeight : 800
-    return Math.max(0, 1 - y / (vh * 0.4))
-  })
-  const yShift = useTransform(scrollY, (y) => -Math.min(y * 0.15, 80))
-
+export function Hero() {
   return (
-    <section className="flex min-h-screen items-center px-8 md:px-16">
-      {!docked && (
-        <motion.div
-          style={{ opacity, y: yShift }}
-          className="flex w-full flex-col items-start gap-8 md:flex-row md:items-center md:justify-between md:gap-12"
-        >
-          <div className="flex flex-col gap-6">
-            <HeroGreeting />
-            <NameLockup mode="full" />
-            <HeroTagline />
+    <section id="top" className="hero proof">
+      <div className="container grid12 hero__grid">
+        <div className="hero__text">
+          <h1>Designing hardware from schematic to silicon.</h1>
+          <p className="lead">
+            Adrian Velazquez-Martinez, ECE master’s student and GEM Fellow at
+            Georgia Tech.
+          </p>
+          <div className="hero__actions">
+            <a href={`mailto:${EMAIL_ADDRESS}`} className="btn btn--primary">
+              Email me
+            </a>
+            <a href="#badger" className="btn">
+              See the Badger build
+            </a>
           </div>
-          <div className="md:mr-16 lg:mr-24">
-            <ProfilePhoto />
+        </div>
+
+        <figure className="hero__figure">
+          <div className="crop">
+            <img
+              src="/projects/project-01/badger-5-web.jpg"
+              alt="Two Badger prototype boards on a workbench beside a multimeter, each e-paper display showing the same portrait."
+              width={1200}
+              height={1600}
+              fetchPriority="high"
+              className="photo hero__photo"
+            />
           </div>
-        </motion.div>
-      )}
+          <div className="redline" aria-hidden="true">
+            <span />
+          </div>
+          <figcaption>
+            <span className="label">
+              Two Badger prototypes on the bench, showing the same image.
+            </span>
+            <span className="label num">3:4</span>
+          </figcaption>
+        </figure>
+      </div>
     </section>
   )
 }
