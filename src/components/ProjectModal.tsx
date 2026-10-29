@@ -1,4 +1,3 @@
-import { AnimatePresence, motion } from "motion/react"
 import { useEffect, useRef } from "react"
 import type { Project } from "@/lib/projects"
 
@@ -10,6 +9,7 @@ interface ProjectModalProps {
 // A case sheet laid over the page. Semantics: role=dialog + aria-modal,
 // Escape closes, click-outside closes, focus moves into the sheet on open and
 // back to the row that opened it on close, body scroll locked while open.
+// Nothing glides: the sheet appears and disappears in one frame.
 export function ProjectModal({ project, onClose }: ProjectModalProps) {
   const panelRef = useRef<HTMLDivElement>(null)
   const isOpen = project !== null
@@ -43,7 +43,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
   }, [isOpen])
 
   return (
-    <AnimatePresence>
+    <>
       {project && (
         <div
           role="dialog"
@@ -51,27 +51,15 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           aria-labelledby={`${project.id}-title`}
           className="sheet-wrap"
         >
-          <motion.button
+          <button
             type="button"
             aria-label="Close"
             tabIndex={-1}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.22 }}
             onClick={onClose}
             className="sheet-scrim"
           />
 
-          <motion.div
-            ref={panelRef}
-            tabIndex={-1}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 8 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="sheet"
-          >
+          <div ref={panelRef} tabIndex={-1} className="sheet">
             <button type="button" onClick={onClose} className="btn sheet__close">
               Close
             </button>
@@ -131,15 +119,15 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                       src={src}
                       alt={`${project.title}, image ${idx + 1} of ${project.images.length}`}
                       loading="lazy"
-                      className="photo"
+                      className="ink-print"
                     />
                   </li>
                 ))}
               </ul>
             )}
-          </motion.div>
+          </div>
         </div>
       )}
-    </AnimatePresence>
+    </>
   )
 }

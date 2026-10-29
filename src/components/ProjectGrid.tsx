@@ -4,11 +4,11 @@ interface ProjectGridProps {
   onCardClick?: (id: string) => void
 }
 
-// The work as an index: one row per project, each opening its case.
+// The work as a boxed table: one cell per project, each opening its case.
 export function ProjectGrid({ onCardClick }: ProjectGridProps) {
   return (
-    <ul className="index">
-      {PROJECTS.map((project) => (
+    <ol className="index cells" aria-label="Projects">
+      {PROJECTS.map((project, idx) => (
         <li key={project.id}>
           <button
             type="button"
@@ -16,12 +16,14 @@ export function ProjectGrid({ onCardClick }: ProjectGridProps) {
             aria-haspopup="dialog"
             onClick={onCardClick ? () => onCardClick(project.id) : undefined}
           >
+            <span className="num index__n" aria-hidden="true">
+              {String(idx + 1).padStart(2, "0")}
+            </span>
             <span className="index__title">{project.title}</span>
-            <span className="label index__cat">{project.category}</span>
             <span className="label index__when">{project.when}</span>
           </button>
         </li>
       ))}
-    </ul>
+    </ol>
   )
 }

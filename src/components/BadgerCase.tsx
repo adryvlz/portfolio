@@ -2,138 +2,99 @@ interface BadgerCaseProps {
   onOpenCase: () => void
 }
 
-// The Badger build told in four stages, each with one object: a photograph,
-// a spec table, a photograph, the two roles the firmware plays.
+// Badger as two split rows: the lead row with the bench photograph, then the
+// firmware's two roles beside a bento of the board's real numbers.
 export function BadgerCase({ onOpenCase }: BadgerCaseProps) {
   return (
     <section id="badger" className="section">
       <div className="container">
-        <div className="head grid12">
-          <h2>Badger, built end to end</h2>
-          <p className="lead">
-            A conference badge anyone can turn on and use, where every other
-            ships as a DIY kit.
-          </p>
-        </div>
-
-        <ol className="stages">
-          <li className="stage grid12">
-            <div className="stage__text">
-              <h3>
-                <span className="stage__n">1.0</span> Schematic and board
-              </h3>
-              <p>
-                An STM32U0 Cortex-M0+, an NXP PN7160 NFC controller and a
-                buck-boost converter on one Li-ion cell. I took it from
-                specification and KiCAD layout through assembly and bring-up.
-              </p>
-            </div>
-            <figure className="stage__obj crop">
-              <img
-                src="/projects/project-01/badger-2-web.jpg"
-                alt="The bare Badger printed circuit board, an L-shaped green board with the microcontroller and NFC controller."
-                width={1600}
-                height={1200}
-                loading="lazy"
-                className="photo"
-              />
-            </figure>
-          </li>
-
-          <li className="stage grid12">
-            <div className="stage__text">
-              <h3>
-                <span className="stage__n">2.0</span> Firmware, no RTOS
-              </h3>
-              <p>
-                Bare-metal C on STM32Cube HAL, with an NCI 2.0 NFC driver
-                built around a two-phase handshake.
-              </p>
-            </div>
-            <dl className="stage__obj specs">
+        <div className="split split--lead cells">
+          <div className="split__text">
+            <h2>Badger</h2>
+            <p>
+              A conference badge anyone can turn on and use, where every other
+              ships as a DIY kit. My Brown capstone, now a startup.
+            </p>
+            <dl className="specs">
               <div>
-                <dt>Microcontroller</dt>
-                <dd>STM32U073, Arm Cortex-M0+</dd>
+                <dt>Role</dt>
+                <dd>Founder and lead engineer: PCB, firmware, app</dd>
               </div>
               <div>
-                <dt>NFC</dt>
-                <dd>NXP PN7160 over NCI 2.0</dd>
-              </div>
-              <div>
-                <dt>Display</dt>
-                <dd>400×300 colour e-paper over SPI</dd>
-              </div>
-              <div>
-                <dt>Power</dt>
-                <dd>Single-cell Li-ion, buck-boost DC-DC</dd>
-              </div>
-              <div>
-                <dt>Firmware</dt>
-                <dd>C on STM32Cube HAL, no RTOS, no DMA</dd>
+                <dt>When</dt>
+                <dd>Capstone at Brown ECE, then a startup since August 2025</dd>
               </div>
             </dl>
-          </li>
-
-          <li className="stage grid12">
-            <div className="stage__text">
-              <h3>
-                <span className="stage__n">3.0</span> The display
-              </h3>
-              <p>
-                Images live in flash and stream to the e-paper panel in
-                chunks, 30&nbsp;KB at a time.
-              </p>
+            <div>
+              <button type="button" className="btn btn--ink" onClick={onOpenCase}>
+                Open the full case
+              </button>
             </div>
-            <figure className="stage__obj stage__obj--narrow crop">
+          </div>
+          <div className="split__proof">
+            <div
+              data-slot="badger-bench"
+              data-alt="Two Badger prototypes on the bench"
+              className="badger__photo"
+            >
               <img
-                src="/projects/project-01/badger-3-web.jpg"
-                alt="A hand holding the Badger e-paper panel during bring-up, showing a speckled image."
+                src="/projects/project-01/badger-5-web.jpg"
+                alt="Two Badger prototype boards on a workbench beside a multimeter, each e-paper display showing the same portrait."
                 width={1200}
                 height={1600}
                 loading="lazy"
-                className="photo"
               />
-            </figure>
-          </li>
+            </div>
+          </div>
+        </div>
 
-          <li className="stage grid12">
-            <div className="stage__text">
-              <h3>
-                <span className="stage__n">4.0</span> Badge to badge
-              </h3>
-              <p>
-                One microcontroller, two roles. I tuned the antenna against NXP
-                AN13218 and built debug tooling to read device memory when a
-                transfer failed.
-              </p>
-            </div>
-            <div className="stage__obj roles">
-              <div>
-                <span className="label">As a tag</span>
-                <p>Hands any phone a vCard as an ISO-DEP Type 4 tag.</p>
+        <div className="split split--even cells">
+          <div className="split__text">
+            <h3>One microcontroller, two roles</h3>
+            <p>
+              As a tag, it hands any phone a vCard over ISO-DEP Type 4. As a
+              reader, it trades contacts and images with other badges over its
+              own APDU set.
+            </p>
+            <p>
+              Bare-metal C on STM32Cube HAL, an NCI 2.0 driver with a two-phase
+              handshake, a KiCAD board I took through bring-up, and an antenna
+              tuned against NXP AN13218.
+            </p>
+          </div>
+          <div className="split__proof">
+            <div className="facts cells">
+              <div
+                data-slot="badger-board"
+                data-alt="The bare Badger board"
+                className="facts__lead"
+              >
+                <img
+                  src="/projects/project-01/badger-2-web.jpg"
+                  alt="The bare Badger printed circuit board, an L-shaped green board with the microcontroller and NFC controller."
+                  width={1600}
+                  height={1200}
+                  loading="lazy"
+                />
               </div>
-              <div>
-                <span className="label">As a reader</span>
-                <p>Trades contacts and images with other badges over its own APDU set.</p>
+              <div className="cell">
+                <span className="cell__big">STM32U0</span>
+                <span className="label">Arm Cortex-M0+</span>
+              </div>
+              <div className="cell cell--ink">
+                <span className="cell__big">PN7160</span>
+                <span className="label">NFC controller, NCI 2.0</span>
+              </div>
+              <div className="cell">
+                <span className="cell__big num">400×300</span>
+                <span className="label">Colour e-paper over SPI</span>
+              </div>
+              <div className="cell">
+                <span className="cell__big num">30&nbsp;KB</span>
+                <span className="label">Images streamed from flash in chunks</span>
               </div>
             </div>
-          </li>
-        </ol>
-
-        <div className="case-foot grid12">
-          <dl className="specs">
-            <div>
-              <dt>Role</dt>
-              <dd>Founder and lead engineer: PCB, firmware, app</dd>
-            </div>
-            <div>
-              <dt>When</dt>
-              <dd>Capstone at Brown ECE, then a startup since August 2025</dd>
-            </div>
-          </dl>
-          <button type="button" className="btn" onClick={onOpenCase}>
-            Open the full case
-          </button>
+          </div>
         </div>
       </div>
     </section>

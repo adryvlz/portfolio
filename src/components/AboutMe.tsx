@@ -1,47 +1,38 @@
 export function AboutMe() {
   return (
-    <section id="about" className="section about">
-      <div className="container grid12 about__grid">
-        <figure className="about__figure crop">
-          <img
-            src="/photos/personal.jpg"
-            alt="Portrait of Adrian Velazquez-Martinez in a suit and tie."
-            width={1244}
-            height={1600}
-            loading="lazy"
-            className="photo"
-          />
-        </figure>
-
-        <div className="about__text">
-          <h2>Brown, then Georgia Tech</h2>
-          <p>
-            I’m drawn to CPU and processor architecture, SoC design and
-            verification. At Brown I built a multicycle RISC-V processor; at
-            Georgia Tech I’m studying digital systems test and GPU co-design.
-          </p>
-          <dl className="specs">
-            <div>
-              <dt>
+    <section id="about" className="section">
+      <div className="container">
+        <div className="split split--even cells">
+          <div className="split__text">
+            <h2>Brown, then Georgia Tech</h2>
+            <p>
+              I’m drawn to CPU and processor architecture, SoC design and
+              verification. At Brown I built a multicycle RISC-V processor; at
+              Georgia Tech I’m studying digital systems test and GPU co-design.
+            </p>
+          </div>
+          <div className="split__proof">
+            <div className="facts cells">
+              <div className="cell">
+                <span className="cell__big num">2027</span>
                 <a href="https://www.gatech.edu" target="_blank" rel="noreferrer" className="link">
                   Georgia Tech
                 </a>
-              </dt>
-              <dd>M.S. Electrical & Computer Engineering, expected December 2027</dd>
-            </div>
-            <div>
-              <dt>
+                <span className="label">M.S. Electrical & Computer Engineering, expected December</span>
+              </div>
+              <div className="cell">
+                <span className="cell__big num">2026</span>
                 <a href="https://www.brown.edu" target="_blank" rel="noreferrer" className="link">
                   Brown University
                 </a>
-              </dt>
-              <dd>B.Sc. Electrical Engineering and B.A. Applied Mathematics, May 2026</dd>
+                <span className="label">B.Sc. Electrical Engineering and B.A. Applied Mathematics</span>
+              </div>
+              <div className="cell cell--ink" style={{ gridColumn: "1 / -1" }}>
+                <span className="cell__big">GEM Fellow</span>
+                <span className="label">Also HSF STEM Scholar, LEDA Scholar & Career Fellow</span>
+              </div>
             </div>
-            <div>
-              <dt>Awards</dt>
-              <dd>GEM Fellow, HSF STEM Scholar, LEDA Scholar & Career Fellow</dd>
-            </div>
-          </dl>
+          </div>
         </div>
       </div>
     </section>

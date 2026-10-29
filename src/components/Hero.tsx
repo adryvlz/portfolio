@@ -1,46 +1,33 @@
-import { EMAIL_ADDRESS } from "@/lib/contact"
+import { ProjectGrid } from "@/components/ProjectGrid"
+import { EMAIL_ADDRESS, LINKEDIN_URL } from "@/lib/contact"
 
-export function Hero() {
+interface HeroProps {
+  onProjectClick: (id: string) => void
+}
+
+// Index hero: the name, one line and the actions, then the work itself as a
+// boxed table. The table is the page's lead.
+export function Hero({ onProjectClick }: HeroProps) {
   return (
-    <section id="top" className="hero proof">
-      <div className="container grid12 hero__grid">
-        <div className="hero__text">
-          <h1>Designing hardware from schematic to silicon.</h1>
-          <p className="lead">
-            Adrian Velazquez-Martinez, ECE master’s student and GEM Fellow at
-            Georgia Tech.
-          </p>
-          <div className="hero__actions">
-            <a href={`mailto:${EMAIL_ADDRESS}`} className="btn btn--primary">
-              Email me
-            </a>
-            <a href="#badger" className="btn">
-              See the Badger build
-            </a>
+    <section id="top" className="hero">
+      <div className="container">
+        <div className="hero__top grid12">
+          <h1>Adrian Velazquez-Martinez</h1>
+          <div className="hero__side">
+            <p>Hardware engineer designing systems from schematic to silicon.</p>
+            <div className="hero__actions">
+              <a href={`mailto:${EMAIL_ADDRESS}`} className="btn btn--ink">
+                Email me
+              </a>
+              <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="btn">
+                LinkedIn
+              </a>
+            </div>
           </div>
         </div>
-
-        <figure className="hero__figure">
-          <div className="crop">
-            <img
-              src="/projects/project-01/badger-5-web.jpg"
-              alt="Two Badger prototype boards on a workbench beside a multimeter, each e-paper display showing the same portrait."
-              width={1200}
-              height={1600}
-              fetchPriority="high"
-              className="photo hero__photo"
-            />
-          </div>
-          <div className="redline" aria-hidden="true">
-            <span />
-          </div>
-          <figcaption>
-            <span className="label">
-              Two Badger prototypes on the bench, showing the same image.
-            </span>
-            <span className="label num">3:4</span>
-          </figcaption>
-        </figure>
+        <div id="projects">
+          <ProjectGrid onCardClick={onProjectClick} />
+        </div>
       </div>
     </section>
   )

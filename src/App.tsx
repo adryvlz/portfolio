@@ -7,7 +7,6 @@ import { Experience } from "@/components/Experience"
 import { Footer } from "@/components/Footer"
 import { Hero } from "@/components/Hero"
 import { Nav } from "@/components/Nav"
-import { ProjectGrid } from "@/components/ProjectGrid"
 import { ProjectModal } from "@/components/ProjectModal"
 import { SkillsAndTools } from "@/components/SkillsAndTools"
 import { PROJECTS } from "@/lib/projects"
@@ -21,22 +20,13 @@ function App() {
       <Nav />
 
       <main>
-        <Hero />
+        <Hero onProjectClick={setActiveId} />
 
         <BadgerCase onOpenCase={() => setActiveId("project-01")} />
 
         <Experience />
 
         <AboutMe />
-
-        <section id="projects" className="section section--l">
-          <div className="container">
-            <div className="head grid12">
-              <h2>Ten projects, from radio to RTL</h2>
-            </div>
-            <ProjectGrid onCardClick={setActiveId} />
-          </div>
-        </section>
 
         <SkillsAndTools />
 

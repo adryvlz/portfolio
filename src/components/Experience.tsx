@@ -2,13 +2,13 @@ const ROLES = [
   {
     company: "Apple & Beats",
     role: "Systems Hardware Engineer Graduate Intern",
-    when: "June to August 2026, Los Angeles",
+    when: "Summer 2026",
     fact: "USB-C charging power path for audio products, and Python analysis of 46 Bluetooth RF test runs across 79 channels.",
   },
   {
     company: "Honeywell Aerospace",
     role: "Electrical Engineer Intern",
-    when: "May to August 2025, Phoenix",
+    when: "Summer 2025",
     fact: "Signal integrity and timing on MRAM interfaces across 15 avionics boards, setup and hold under 10 ns.",
   },
   {
@@ -22,20 +22,28 @@ const ROLES = [
 export function Experience() {
   return (
     <section id="experience" className="section section--s">
-      <div className="container grid12">
-        <h2 className="rows-head">Where I’ve worked</h2>
-        <ul className="rows">
-          {ROLES.map((r) => (
-            <li key={r.company} className="row">
-              <h3>{r.company}</h3>
-              <div className="row__body">
-                <p>{r.role}</p>
-                <p className="label">{r.when}</p>
-                <p>{r.fact}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
+      <div className="container">
+        <h2 className="head">Where I’ve worked</h2>
+        <table className="table">
+          <thead>
+            <tr>
+              <th scope="col">Company</th>
+              <th scope="col">Role</th>
+              <th scope="col">When</th>
+              <th scope="col">What I did</th>
+            </tr>
+          </thead>
+          <tbody>
+            {ROLES.map((r) => (
+              <tr key={r.company}>
+                <th scope="row">{r.company}</th>
+                <td>{r.role}</td>
+                <td>{r.when}</td>
+                <td>{r.fact}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </section>
   )
